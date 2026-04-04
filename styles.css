@@ -404,6 +404,17 @@ a[href*="local.tech"] {
     margin-bottom: 0;
 }
 
+.about-text a {
+    color: var(--color-prompt);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.about-text a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .about-stats {
     display: flex;
     flex-direction: column;
