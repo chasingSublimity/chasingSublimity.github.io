@@ -182,7 +182,7 @@ body {
     font-weight: 400;
 }
 
-.hero-title .highlight {
+.highlight {
     color: var(--color-accent);
     font-weight: 500;
 }
@@ -204,7 +204,7 @@ body {
     color: var(--color-accent);
 }
 
-.hero-subtitle a[href*="local.tech"] {
+a[href*="local.tech"] {
     color: var(--color-prompt);
 }
 
