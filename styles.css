@@ -52,7 +52,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 30px;
 }
@@ -71,7 +71,7 @@ body {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 30px;
     display: flex;
@@ -142,7 +142,7 @@ body {
     justify-content: space-between;
     gap: 75px;
     padding: 175px 30px 100px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -193,6 +193,24 @@ body {
     margin-bottom: 50px;
     max-width: 600px;
     line-height: 1.9;
+}
+
+.hero-subtitle a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.hero-subtitle a[href*="trello"] {
+    color: var(--color-accent);
+}
+
+.hero-subtitle a[href*="local.tech"] {
+    color: var(--color-prompt);
+}
+
+.hero-subtitle a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .hero-cta {
