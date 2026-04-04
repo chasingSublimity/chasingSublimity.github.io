@@ -13,9 +13,10 @@
     />
   </head>
   <body>
-    <nav class="nav">
+    <a href="#about" class="skip-link">Skip to main content</a>
+    <nav class="nav" aria-label="Primary">
       <div class="nav-container">
-        <a href="#" class="nav-logo">~/blake</a>
+        <a href="/" class="nav-logo">~/blake</a>
         <ul class="nav-links">
           <li><a href="#about">about</a></li>
           <li><a href="#experience">experience</a></li>
@@ -27,16 +28,16 @@
 
     <header class="hero">
       <div class="hero-content">
-        <p class="hero-greeting"><span class="prompt">$</span> whoami</p>
+        <p class="hero-greeting"><span class="prompt" aria-hidden="true">$</span> whoami</p>
         <h1 class="hero-name">Blake Sager</h1>
         <p class="hero-title">Principal Engineer</p>
         <p class="hero-subtitle">
           Building AI-native devloops @
-          <a href="https://trello.com" target="_blank" rel="noopener"
+          <a href="https://trello.com" target="_blank" rel="noopener" aria-label="trello.com (opens in new tab)"
             >trello.com</a
           >.<br />
           Building software for my neighbors @
-          <a href="https://local.tech" target="_blank" rel="noopener"
+          <a href="https://local.tech" target="_blank" rel="noopener" aria-label="local.tech (opens in new tab)"
             >local.tech</a
           >.
         </p>
@@ -45,7 +46,7 @@
           <a href="#experience" class="btn btn-secondary">view my work</a>
         </div>
       </div>
-      <div class="hero-visual">
+      <div class="hero-visual" aria-hidden="true">
         <div class="code-block">
           <div class="code-header">
             <span class="dot red"></span>
@@ -69,7 +70,7 @@
 
     <section id="about" class="section about">
       <div class="container">
-        <h2 class="section-title">cat about.md</h2>
+        <h2 class="section-title" aria-label="About">cat about.md</h2>
         <div class="about-content">
           <div class="about-text">
             <p>
@@ -83,7 +84,7 @@
             </p>
             <p>
               As a technical cofounder of
-              <a href="https://local.tech" target="_blank" rel="noopener"
+              <a href="https://local.tech" target="_blank" rel="noopener" aria-label="local.tech (opens in new tab)"
                 >local.tech</a
               >, I build custom software for small and medium businesses in my
               community, helping local companies ditch bloated, legacy SaaS
@@ -97,17 +98,17 @@
             </p>
           </div>
           <div class="about-stats">
-            <div class="stat">
-              <span class="stat-number">10+</span>
-              <span class="stat-label">years_experience</span>
+            <div class="stat" aria-label="10+ years experience">
+              <span class="stat-number" aria-hidden="true">10+</span>
+              <span class="stat-label" aria-hidden="true">years_experience</span>
             </div>
-            <div class="stat">
-              <span class="stat-number">200+</span>
-              <span class="stat-label">engineers_supported</span>
+            <div class="stat" aria-label="200+ engineers supported">
+              <span class="stat-number" aria-hidden="true">200+</span>
+              <span class="stat-label" aria-hidden="true">engineers_supported</span>
             </div>
-            <div class="stat">
-              <span class="stat-number">99.99%</span>
-              <span class="stat-label">uptime_achieved</span>
+            <div class="stat" aria-label="99.99% uptime achieved">
+              <span class="stat-number" aria-hidden="true">99.99%</span>
+              <span class="stat-label" aria-hidden="true">uptime_achieved</span>
             </div>
           </div>
         </div>
@@ -116,7 +117,7 @@
 
     <section id="experience" class="section experience">
       <div class="container">
-        <h2 class="section-title">git log --author=blake</h2>
+        <h2 class="section-title" aria-label="Experience">git log --author=blake</h2>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-marker"></div>
@@ -211,7 +212,7 @@
 
     <section id="expertise" class="section expertise">
       <div class="container">
-        <h2 class="section-title">ls expertise/</h2>
+        <h2 class="section-title" aria-label="Expertise">ls expertise/</h2>
         <div class="expertise-grid">
           <div class="expertise-card">
             <div class="expertise-icon">
@@ -220,6 +221,7 @@
                 fill="none"
                 stroke="currentColor"
                 stroke-width="1.5"
+                aria-hidden="true"
               >
                 <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
               </svg>
@@ -238,6 +240,7 @@
                 fill="none"
                 stroke="currentColor"
                 stroke-width="1.5"
+                aria-hidden="true"
               >
                 <rect x="2" y="3" width="20" height="14" rx="0" ry="0" />
                 <line x1="8" y1="21" x2="16" y2="21" />
@@ -258,6 +261,7 @@
                 fill="none"
                 stroke="currentColor"
                 stroke-width="1.5"
+                aria-hidden="true"
               >
                 <ellipse cx="12" cy="5" rx="9" ry="3" />
                 <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
@@ -278,6 +282,7 @@
                 fill="none"
                 stroke="currentColor"
                 stroke-width="1.5"
+                aria-hidden="true"
               >
                 <path d="M12 2L2 7l10 5 10-5-10-5z" />
                 <path d="M2 17l10 5 10-5" />
@@ -297,6 +302,7 @@
                 fill="none"
                 stroke="currentColor"
                 stroke-width="1.5"
+                aria-hidden="true"
               >
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12,6 12,12 16,14" />
@@ -316,6 +322,7 @@
                 fill="none"
                 stroke="currentColor"
                 stroke-width="1.5"
+                aria-hidden="true"
               >
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                 <circle cx="9" cy="7" r="4" />
@@ -336,7 +343,7 @@
 
     <section id="contact" class="section contact">
       <div class="container">
-        <h2 class="section-title">contact --list</h2>
+        <h2 class="section-title" aria-label="Contact">contact --list</h2>
         <p class="contact-intro">
           Interested in discussing developer experience, CI/CD, or dev tooling?
           I'd love to hear from you.
@@ -348,6 +355,7 @@
               fill="none"
               stroke="currentColor"
               stroke-width="1.5"
+              aria-hidden="true"
             >
               <path
                 d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
@@ -361,12 +369,14 @@
             class="contact-link"
             target="_blank"
             rel="noopener"
+            aria-label="LinkedIn (opens in new tab)"
           >
             <svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="1.5"
+              aria-hidden="true"
             >
               <path
                 d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
@@ -381,12 +391,14 @@
             class="contact-link"
             target="_blank"
             rel="noopener"
+            aria-label="GitHub (opens in new tab)"
           >
             <svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="1.5"
+              aria-hidden="true"
             >
               <path
                 d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
@@ -399,8 +411,9 @@
             class="contact-link"
             target="_blank"
             rel="noopener"
+            aria-label="Bluesky (opens in new tab)"
           >
-            <svg viewBox="0 0 24 24" fill="currentColor">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"
               />
