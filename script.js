@@ -24,11 +24,7 @@ const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
-    if (nav) {
-        nav.style.background = window.scrollY > 50
-            ? 'rgba(13, 13, 13, 0.97)'
-            : 'rgba(13, 13, 13, 0.92)';
-    }
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
 
     let current = '';
     const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 5;
@@ -45,6 +41,16 @@ window.addEventListener('scroll', () => {
         link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
     });
 }, { passive: true });
+
+const themeToggle = document.querySelector('.theme-toggle');
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const root = document.documentElement;
+        const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+    });
+}
 
 const codeElement = document.querySelector('.code-block code');
 if (codeElement) {
