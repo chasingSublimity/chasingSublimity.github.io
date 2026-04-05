@@ -360,14 +360,34 @@ a[href*="local.tech"] {
     color: var(--color-text-secondary);
     letter-spacing: 0.02em;
     display: block;
-    padding-left: 25px;
+    width: fit-content;
+    border: 1px solid transparent;
     border-left: 2px solid var(--color-prompt);
     line-height: 1.4;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
-.section-title::before {
+.section-title a {
+    display: block;
+    padding: 9px 16px 9px 23px;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.section-title:has(a:hover) a {
+    color: var(--color-text);
+}
+
+.section-title a::before {
     content: '$ ';
     color: var(--color-prompt);
+}
+
+.section-title:has(a:hover) {
+    border-color: var(--color-border);
+    border-left-color: var(--color-accent);
+    background: var(--color-bg-tertiary);
 }
 
 /* ── About Section ──────────────────────────────────────── */

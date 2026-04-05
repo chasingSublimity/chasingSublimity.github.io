@@ -31,11 +31,16 @@ window.addEventListener('scroll', () => {
     }
 
     let current = '';
-    sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - 100) {
-            current = section.getAttribute('id');
-        }
-    });
+    const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 5;
+    if (atBottom) {
+        current = sections[sections.length - 1].getAttribute('id');
+    } else {
+        sections.forEach(section => {
+            if (window.scrollY >= section.offsetTop - 100) {
+                current = section.getAttribute('id');
+            }
+        });
+    }
     navLinks.forEach(link => {
         link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
     });
