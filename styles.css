@@ -699,6 +699,33 @@ a[href*="local.tech"] {
     50% { opacity: 0; }
 }
 
+.code-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: #0079bf;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+    margin-left: 1px;
+}
+
+.timeline-item,
+.expertise-card,
+.stat,
+.contact-link {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-item.visible,
+.expertise-card.visible,
+.stat.visible,
+.contact-link.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .hero-content {
     animation: fadeInUp 0.6s ease-out forwards;
 }
