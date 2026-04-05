@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+    <script>
+      (function () {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
     <title>Blake Sager | Principal Engineer</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,11 +30,33 @@
           <li><a href="#contact">contact</a></li>
         </ul>
         <button class="theme-toggle" aria-label="Toggle light/dark mode">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          <svg
+            class="icon-sun"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
           </svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          <svg
+            class="icon-moon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
         </button>
       </div>
@@ -85,7 +112,9 @@
 
     <section id="about" class="section about">
       <div class="container">
-        <h2 class="section-title"><a href="#about" aria-label="About">cat about.md</a></h2>
+        <h2 class="section-title">
+          <a href="#about" aria-label="About">cat about.md</a>
+        </h2>
         <div class="about-content">
           <div class="about-text">
             <p>I love building tools.</p>
@@ -117,31 +146,17 @@
               and making indie games.
             </p>
           </div>
-          <div class="about-stats">
-            <div class="stat" aria-label="10+ years experience">
-              <span class="stat-number" aria-hidden="true">10+</span>
-              <span class="stat-label" aria-hidden="true"
-                >years_experience</span
-              >
-            </div>
-            <div class="stat" aria-label="200+ engineers supported">
-              <span class="stat-number" aria-hidden="true">200+</span>
-              <span class="stat-label" aria-hidden="true"
-                >engineers_supported</span
-              >
-            </div>
-            <div class="stat" aria-label="99.99% uptime achieved">
-              <span class="stat-number" aria-hidden="true">99.99%</span>
-              <span class="stat-label" aria-hidden="true">uptime_achieved</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
     <section id="experience" class="section experience">
       <div class="container">
-        <h2 class="section-title"><a href="#experience" aria-label="Experience">git log --author=blake</a></h2>
+        <h2 class="section-title">
+          <a href="#experience" aria-label="Experience"
+            >git log --author=blake</a
+          >
+        </h2>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-marker"></div>
@@ -199,7 +214,8 @@
               <p>
                 Contributed to the reliability and scalability of Trello's core
                 backend, working across API development, data modeling, and
-                performance improvements on one of Atlassian's flagship products.
+                performance improvements on one of Atlassian's flagship
+                products.
               </p>
               <div class="tech-tags">
                 <span class="tag">Node.js</span>
@@ -219,8 +235,8 @@
               <p>
                 Built and extended API integrations with third-party platforms.
                 Improved product resiliency through spooling and circuit breaker
-                patterns, and contributed to API endpoint development across
-                the core platform.
+                patterns, and contributed to API endpoint development across the
+                core platform.
               </p>
               <div class="tech-tags">
                 <span class="tag">Node.js</span>
@@ -256,7 +272,9 @@
 
     <section id="expertise" class="section expertise">
       <div class="container">
-        <h2 class="section-title"><a href="#expertise" aria-label="Expertise">ls expertise/</a></h2>
+        <h2 class="section-title">
+          <a href="#expertise" aria-label="Expertise">ls expertise/</a>
+        </h2>
         <div class="expertise-grid">
           <div class="expertise-card">
             <div class="expertise-icon">
@@ -387,7 +405,9 @@
 
     <section id="contact" class="section contact">
       <div class="container">
-        <h2 class="section-title"><a href="#contact" aria-label="Contact">contact --list</a></h2>
+        <h2 class="section-title">
+          <a href="#contact" aria-label="Contact">contact --list</a>
+        </h2>
         <p class="contact-intro">
           Interested in discussing developer experience, CI/CD, or dev tooling?
           I'd love to hear from you.

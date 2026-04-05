@@ -10,7 +10,6 @@ const observer = new IntersectionObserver((entries) => {
 [
     ['.timeline-item', 0.08],
     ['.expertise-card', 0.06],
-    ['.stat', 0.1],
     ['.contact-link', 0.07],
 ].forEach(([selector, delay]) => {
     document.querySelectorAll(selector).forEach((el, i) => {
