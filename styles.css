@@ -332,7 +332,7 @@ a[href*="local.tech"] {
 .code-block pre {
     padding: 30px;
     margin: 0;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .code-block code {
