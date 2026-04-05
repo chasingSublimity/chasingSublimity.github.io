@@ -309,23 +309,18 @@ a[href*="local.tech"] {
 
 .code-header {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     padding: 15px 20px;
     background: var(--color-bg-tertiary);
     border-bottom: 1px solid var(--color-border);
     align-items: center;
 }
 
-.dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    flex-shrink: 0;
+.code-header .prompt {
+    color: var(--color-prompt);
+    font-size: 0.82rem;
+    user-select: none;
 }
-
-.dot.red    { background: #ff5f57; }
-.dot.yellow { background: #febc2e; }
-.dot.green  { background: #28c840; }
 
 .code-title {
     font-size: 0.82rem;
