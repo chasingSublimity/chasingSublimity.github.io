@@ -10,7 +10,7 @@ const { title, date } = Astro.props;
 const dateStr = date.toISOString().split('T')[0];
 ---
 <Base title={`${title} | Blake Sager`}>
-  <article class="post-container">
+  <article id="post" class="post-container">
     <div class="container">
       <header class="post-header">
         <h1 class="post-title">{title}</h1>

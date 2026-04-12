@@ -187,11 +187,11 @@
     color: var(--color-text-secondary);
   }
 
-  .code-block .keyword  { color: var(--color-syntax-keyword); }
-  .code-block .function { color: var(--color-syntax-function); }
-  .code-block .string   { color: var(--color-syntax-string); }
+  .code-block :global(.keyword)  { color: var(--color-syntax-keyword); }
+  .code-block :global(.function) { color: var(--color-syntax-function); }
+  .code-block :global(.string)   { color: var(--color-syntax-string); }
 
-  .code-cursor {
+  .code-block :global(.code-cursor) {
     display: inline-block;
     width: 2px;
     height: 1.1em;
