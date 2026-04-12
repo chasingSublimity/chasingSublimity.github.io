@@ -37,7 +37,7 @@ window.addEventListener('scroll', () => {
         });
     }
     navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+        link.classList.toggle('active', new URL(link.href).hash === `#${current}`);
     });
 }, { passive: true });
 
