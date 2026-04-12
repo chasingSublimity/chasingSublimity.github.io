@@ -23,3 +23,139 @@ const dateStr = date.toISOString().split('T')[0];
     </div>
   </article>
 </Base>
+
+<style>
+  .post-container {
+    padding-top: 160px;
+    padding-bottom: 120px;
+    background: var(--color-bg);
+  }
+
+  .post-header {
+    margin-bottom: 60px;
+  }
+
+  .post-title {
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .post-date {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--color-text-tertiary);
+    letter-spacing: 0.05em;
+  }
+
+  .post-content {
+    max-width: 720px;
+  }
+
+  /* Prose styles target slot/markdown content — use :global() */
+  .post-content :global(p) {
+    color: var(--color-text-secondary);
+    margin-bottom: 25px;
+    font-size: 0.975rem;
+    line-height: 1.85;
+  }
+
+  .post-content :global(h2) {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 50px 0 20px;
+    padding-left: 16px;
+    border-left: 2px solid var(--color-prompt);
+  }
+
+  .post-content :global(h3) {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 35px 0 15px;
+  }
+
+  .post-content :global(a) {
+    color: var(--color-prompt);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .post-content :global(a:hover) {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .post-content :global(code) {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-syntax-string);
+    background: var(--color-bg-tertiary);
+    padding: 2px 6px;
+    border: 1px solid var(--color-border);
+  }
+
+  .post-content :global(pre) {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-left: 2px solid var(--color-prompt);
+    padding: 25px 30px;
+    overflow-x: auto;
+    margin: 30px 0;
+  }
+
+  .post-content :global(pre code) {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .post-content :global(blockquote) {
+    border-left: 2px solid var(--color-accent);
+    padding: 15px 25px;
+    margin: 30px 0;
+    background: var(--color-bg-secondary);
+    color: var(--color-text-secondary);
+  }
+
+  .post-content :global(ul),
+  .post-content :global(ol) {
+    color: var(--color-text-secondary);
+    padding-left: 25px;
+    margin-bottom: 25px;
+    font-size: 0.975rem;
+    line-height: 1.85;
+  }
+
+  .post-content :global(li) {
+    margin-bottom: 8px;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 60px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    border-left: 2px solid var(--color-prompt);
+    padding: 8px 16px;
+  }
+
+  .back-link:hover {
+    color: var(--color-text);
+    border-left-color: var(--color-accent);
+    background: var(--color-bg-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .post-container {
+      padding-top: 120px;
+    }
+  }
+</style>
