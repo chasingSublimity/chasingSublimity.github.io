@@ -1,0 +1,233 @@
+---
+---
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <h3>Principal Engineer, Dev Lifecycle</h3>
+        <span class="company">Trello (Atlassian)</span>
+      </div>
+      <span class="timeline-date">2025 — present</span>
+      <p>
+        Leading the Dev Lifecycle team responsible for CI, deployments,
+        and developer tooling across Trello's core repositories. Own
+        both inner loop (local dev experience) and outer loop (CI/CD
+        pipelines, staging, production deploys) for the engineering
+        organization.
+      </p>
+      <div class="tech-tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">React</span>
+        <span class="tag">AWS</span>
+        <span class="tag">CI/CD</span>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <h3>Sr Backend Engineer, Backend Platform</h3>
+        <span class="company">Trello (Atlassian)</span>
+      </div>
+      <span class="timeline-date">2023 — 2025</span>
+      <p>
+        Worked on the performance, reliability, and scalability of
+        Trello's primary backend monolith.
+      </p>
+      <div class="tech-tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">AWS</span>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <h3>Backend Engineer</h3>
+        <span class="company">Trello (Atlassian)</span>
+      </div>
+      <span class="timeline-date">2021 — 2023</span>
+      <p>
+        Contributed to the reliability and scalability of Trello's core
+        backend, working across API development, data modeling, and
+        performance improvements on one of Atlassian's flagship
+        products.
+      </p>
+      <div class="tech-tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">AWS</span>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <h3>Software Engineer</h3>
+        <span class="company">ActiveProspect</span>
+      </div>
+      <span class="timeline-date">2017 — 2021</span>
+      <p>
+        Built and extended API integrations with third-party platforms.
+        Improved product resiliency through spooling and circuit breaker
+        patterns, and contributed to API endpoint development across the
+        core platform.
+      </p>
+      <div class="tech-tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">Angular</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">AWS</span>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <h3>Jr Backend Engineer</h3>
+        <span class="company">Ryder</span>
+      </div>
+      <span class="timeline-date">2016 — 2017</span>
+      <p>
+        Developed core file synchronization services and storage
+        optimization algorithms. Contributed to systems serving over 500
+        million users with petabytes of data.
+      </p>
+      <div class="tech-tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">Angular</span>
+        <span class="tag">OracleDB</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .timeline {
+    position: relative;
+    padding-left: 35px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 1px;
+    background: var(--color-border);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 50px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -40px;
+    top: 11px;
+    width: 10px;
+    height: 10px;
+    background: var(--color-prompt);
+    border-radius: 0;
+  }
+
+  .timeline-content {
+    background: var(--color-bg-secondary);
+    padding: 35px 40px;
+    border: 1px solid var(--color-border);
+    transition: box-shadow 0.2s ease, background 0.2s ease;
+  }
+
+  .timeline-content:hover {
+    box-shadow: inset 3px 0 0 var(--color-accent);
+    background: var(--color-bg-tertiary);
+  }
+
+  .timeline-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px 18px;
+    margin-bottom: 5px;
+  }
+
+  .timeline-header h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .company {
+    color: var(--color-accent);
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+
+  .timeline-date {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--color-text-tertiary);
+    margin-bottom: 18px;
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-content p {
+    color: var(--color-text-secondary);
+    margin-bottom: 22px;
+    font-size: 0.975rem;
+    line-height: 1.85;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    padding: 4px 12px;
+    background: transparent;
+    color: var(--color-text-tertiary);
+    border: 1px solid var(--color-border);
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    letter-spacing: 0.04em;
+    transition: var(--transition);
+  }
+
+  .tag:hover {
+    color: var(--color-text-secondary);
+    border-color: var(--color-text-tertiary);
+  }
+
+  @media (max-width: 768px) {
+    .timeline {
+      padding-left: 25px;
+    }
+
+    .timeline-marker {
+      left: -30px;
+    }
+  }
+</style>
