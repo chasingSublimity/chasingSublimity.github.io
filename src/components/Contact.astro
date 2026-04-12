@@ -1,0 +1,85 @@
+---
+---
+<p class="contact-intro">
+  Interested in discussing developer experience, CI/CD, or dev tooling?
+  I'd love to hear from you.
+</p>
+<div class="contact-links">
+  <a href="mailto:blakemsager@gmail.com" class="contact-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+      <polyline points="22,6 12,13 2,6" />
+    </svg>
+    <span>Email</span>
+  </a>
+  <a href="https://www.linkedin.com/in/adfontes/" class="contact-link" target="_blank" rel="noopener" aria-label="LinkedIn (opens in new tab)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+    <span>LinkedIn</span>
+  </a>
+  <a href="https://github.com/chasingSublimity" class="contact-link" target="_blank" rel="noopener" aria-label="GitHub (opens in new tab)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+    </svg>
+    <span>GitHub</span>
+  </a>
+  <a href="https://bsky.app/profile/adfontes.bsky.social" class="contact-link" target="_blank" rel="noopener" aria-label="Bluesky (opens in new tab)">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z" />
+    </svg>
+    <span>Bluesky</span>
+  </a>
+</div>
+
+<style>
+  .contact-intro {
+    color: var(--color-text-secondary);
+    max-width: 700px;
+    margin-bottom: 50px;
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 30px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-family: var(--font-mono);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .contact-link:hover {
+    box-shadow: inset 3px 0 0 var(--color-accent);
+    color: var(--color-text);
+    background: var(--color-bg-tertiary);
+  }
+
+  .contact-link.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .contact-link svg {
+    width: 22px;
+    height: 22px;
+    color: var(--color-prompt);
+    flex-shrink: 0;
+  }
+</style>

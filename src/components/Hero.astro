@@ -1,0 +1,210 @@
+---
+---
+<header class="hero">
+  <div class="hero-content">
+    <p class="hero-greeting">
+      <span class="prompt" aria-hidden="true">$</span> whoami
+    </p>
+    <h1 class="hero-name">Blake Sager</h1>
+    <p class="hero-title">Principal Engineer</p>
+    <p class="hero-subtitle">
+      Building AI-native devloops @
+      <a
+        href="https://trello.com"
+        target="_blank"
+        rel="noopener"
+        aria-label="trello.com (opens in new tab)"
+        >trello.com</a
+      >.<br />
+      Building software for my neighbors @
+      <a
+        href="https://local.tech"
+        target="_blank"
+        rel="noopener"
+        aria-label="local.tech (opens in new tab)"
+        >local.tech</a
+      >.
+    </p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">get in touch</a>
+      <a href="#experience" class="btn btn-secondary">view my work</a>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="code-block">
+      <div class="code-header">
+        <span class="prompt" aria-hidden="true">$</span>
+        <span class="code-title">./blake --help</span>
+      </div>
+      <pre><code><span class="keyword">usage:</span> <span class="function">blake</span> [--build | --mentor | --automate]
+
+<span class="keyword">options:</span>
+  <span class="string">--build</span>      design and implement
+  <span class="string">--mentor</span>     shepherd and grow
+  <span class="string">--automate</span>   scale and optimize
+
+<span class="keyword">requires:</span> coffee</code></pre>
+    </div>
+  </div>
+</header>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 75px;
+    padding: 175px 30px 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    flex: 1;
+    max-width: 750px;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .hero-greeting {
+    font-size: 1rem;
+    color: var(--color-prompt);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .prompt {
+    color: var(--color-prompt);
+  }
+
+  .hero-name {
+    font-size: clamp(2.6rem, 5.5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: var(--color-text);
+    letter-spacing: -0.03em;
+  }
+
+  .hero-title {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: var(--color-text-secondary);
+    margin-bottom: 17px;
+    font-weight: 400;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-tertiary);
+    margin-bottom: 50px;
+    max-width: 600px;
+    line-height: 1.9;
+  }
+
+  .hero-subtitle a {
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .hero-subtitle a[href*="trello"] {
+    color: var(--color-accent);
+  }
+
+  a[href*="local.tech"] {
+    color: var(--color-prompt);
+  }
+
+  .hero-subtitle a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* Code Block Visual */
+  .hero-visual {
+    flex: 1;
+    max-width: 575px;
+    display: none;
+    animation: fadeInUp 0.6s 0.15s ease-out both;
+  }
+
+  @media (min-width: 900px) {
+    .hero-visual {
+      display: block;
+    }
+  }
+
+  .code-block {
+    background: var(--color-bg-secondary);
+    border-radius: 0;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    box-shadow: 0 24px 48px var(--color-code-shadow),
+                inset 0 1px 0 rgba(255,255,255,0.03);
+  }
+
+  .code-header {
+    display: flex;
+    gap: 8px;
+    padding: 15px 20px;
+    background: var(--color-bg-tertiary);
+    border-bottom: 1px solid var(--color-border);
+    align-items: center;
+  }
+
+  .code-header .prompt {
+    color: var(--color-prompt);
+    font-size: 0.82rem;
+    user-select: none;
+  }
+
+  .code-title {
+    font-size: 0.82rem;
+    color: var(--color-text-tertiary);
+    margin-left: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .code-block pre {
+    padding: 30px;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .code-block code {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+  }
+
+  .code-block :global(.keyword)  { color: var(--color-syntax-keyword); }
+  .code-block :global(.function) { color: var(--color-syntax-function); }
+  .code-block :global(.string)   { color: var(--color-syntax-string); }
+
+  .code-block :global(.code-cursor) {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: var(--color-accent);
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+    margin-left: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding-top: 130px;
+      min-height: auto;
+    }
+  }
+</style>

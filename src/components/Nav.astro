@@ -1,0 +1,178 @@
+---
+---
+<a href="#main" class="skip-link">Skip to main content</a>
+<nav class="nav" aria-label="Primary">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">~/blake</a>
+    <ul class="nav-links">
+      <li><a href="/#about">about</a></li>
+      <li><a href="/#experience">experience</a></li>
+      <li><a href="/#expertise">expertise</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/#contact">contact</a></li>
+    </ul>
+    <button class="theme-toggle" aria-label="Toggle light/dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<style>
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .skip-link:focus {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    padding: 0.5rem 1rem;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    z-index: 10000;
+    outline: none;
+  }
+
+  /* Navigation */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--color-nav-bg);
+    transition: background 0.3s ease;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav.scrolled {
+    background: var(--color-nav-bg-scrolled);
+  }
+
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+  }
+
+  .nav-logo {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-prompt);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: var(--transition);
+  }
+
+  .nav-logo:hover {
+    color: var(--color-text);
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: 12px 22px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    transition: var(--transition);
+    display: block;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 22px;
+    right: 22px;
+    height: 1px;
+    background: var(--color-prompt);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+    transform-origin: left;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--color-text);
+  }
+
+  .nav-links a:hover::after,
+  .nav-links a.active::after {
+    transform: scaleX(1);
+  }
+
+  /* Theme Toggle */
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+    margin-left: 8px;
+  }
+
+  .theme-toggle:hover {
+    color: var(--color-text);
+  }
+
+  .theme-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .theme-toggle .icon-sun  { display: block; }
+  .theme-toggle .icon-moon { display: none; }
+
+  :global([data-theme="light"]) .theme-toggle .icon-sun  { display: none; }
+  :global([data-theme="light"]) .theme-toggle .icon-moon { display: block; }
+
+  @media (prefers-color-scheme: light) {
+    :global(:root:not([data-theme="dark"])) .theme-toggle .icon-sun  { display: none; }
+    :global(:root:not([data-theme="dark"])) .theme-toggle .icon-moon { display: block; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>

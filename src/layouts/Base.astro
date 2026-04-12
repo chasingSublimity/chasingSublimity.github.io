@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title?: string;
@@ -26,48 +28,11 @@ const { title = 'Blake Sager | Principal Engineer' } = Astro.props;
     />
   </head>
   <body>
-    <a href="#main" class="skip-link">Skip to main content</a>
-    <nav class="nav" aria-label="Primary">
-      <div class="nav-container">
-        <a href="/" class="nav-logo">~/blake</a>
-        <ul class="nav-links">
-          <li><a href="/#about">about</a></li>
-          <li><a href="/#experience">experience</a></li>
-          <li><a href="/#expertise">expertise</a></li>
-          <li><a href="/blog/">blog</a></li>
-          <li><a href="/#contact">contact</a></li>
-        </ul>
-        <button class="theme-toggle" aria-label="Toggle light/dark mode">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <circle cx="12" cy="12" r="5" />
-            <line x1="12" y1="1" x2="12" y2="3" />
-            <line x1="12" y1="21" x2="12" y2="23" />
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-            <line x1="1" y1="12" x2="3" y2="12" />
-            <line x1="21" y1="12" x2="23" y2="12" />
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-          </svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-          </svg>
-        </button>
-      </div>
-    </nav>
-
+    <Nav />
     <main id="main">
       <slot />
     </main>
-
-    <footer class="footer">
-      <div class="footer-bar">
-        <span class="footer-mode">NORMAL</span>
-        <span class="footer-info">blake sager &middot; principal engineer</span>
-        <span class="footer-meta">utf-8 &middot; unix &middot; &copy; 2026</span>
-      </div>
-    </footer>
-
+    <Footer />
     <script is:inline src="/script.js"></script>
   </body>
 </html>
