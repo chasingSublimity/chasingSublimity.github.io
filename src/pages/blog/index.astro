@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+<Base title="Blog | Blake Sager">
+  <section class="section blog-section">
+    <div class="container">
+      <h2 class="section-title">
+        <a href="/blog/" aria-label="Blog">ls blog/</a>
+      </h2>
+      <div class="blog-list">
+        {posts.map(post => {
+          const dateStr = post.data.date.toISOString().split('T')[0];
+          return (
+            <a href={`/blog/${post.slug}/`} class="blog-post-row">
+              <span class="post-meta">{dateStr}</span>
+              <span class="post-info">
+                <span class="post-title-text">{post.data.title}</span>
+                <span class="post-description">{post.data.description}</span>
+              </span>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</Base>
