@@ -15,8 +15,9 @@ const { title = 'Blake Sager | Principal Engineer' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script is:inline>
       (function () {
-        var t = localStorage.getItem("theme");
-        if (t) document.documentElement.setAttribute("data-theme", t);
+        var t = localStorage.getItem("theme") ||
+          (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", t);
       })();
     </script>
     <title>{title}</title>
