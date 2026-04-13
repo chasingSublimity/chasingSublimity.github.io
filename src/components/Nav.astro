@@ -31,7 +31,16 @@
 </nav>
 
 <style>
-  /* Skip link */
+  /*
+   * Nav — fixed top bar with frosted-glass backdrop blur.
+   * Contains: logo ("~/blake"), section links, and a light/dark theme toggle.
+   * The "scrolled" class is toggled by script.js when the user scrolls past
+   * 50px, making the background slightly more opaque.
+   * On mobile (<768px) the section links are hidden entirely.
+   */
+
+  /* Accessibility: invisible link that appears when focused via keyboard,
+   * letting users skip the nav and jump straight to page content. */
   .skip-link {
     position: absolute;
     left: -9999px;
@@ -57,7 +66,7 @@
     outline: none;
   }
 
-  /* Navigation */
+  /* Pinned to top of viewport, semi-transparent with backdrop blur */
   .nav {
     position: fixed;
     top: 0;
@@ -70,6 +79,7 @@
     border-bottom: 1px solid var(--color-border);
   }
 
+  /* Slightly more opaque after scrolling (class toggled by script.js) */
   .nav.scrolled {
     background: var(--color-nav-bg-scrolled);
   }
@@ -84,6 +94,7 @@
     height: 90px;
   }
 
+  /* Logo styled as a terminal path: "~/blake" in prompt green */
   .nav-logo {
     font-size: 1rem;
     font-weight: 500;
@@ -114,6 +125,8 @@
     position: relative;
   }
 
+  /* Green underline that slides in from the left on hover/active.
+   * Uses scaleX(0→1) so the line animates its width, not its position. */
   .nav-links a::after {
     content: '';
     position: absolute;
@@ -137,7 +150,9 @@
     transform: scaleX(1);
   }
 
-  /* Theme Toggle */
+  /* Sun/moon toggle button for switching between dark and light themes.
+   * Clicking it sets data-theme on <html> and saves to localStorage
+   * (handled in script.js). */
   .theme-toggle {
     background: none;
     border: none;
@@ -159,17 +174,16 @@
     height: 18px;
   }
 
+  /* Dark mode (default): show sun icon (click to go light).
+   * Light mode: show moon icon (click to go dark).
+   * :global() escapes Astro's style scoping to read the attribute on <html>. */
   .theme-toggle .icon-sun  { display: block; }
   .theme-toggle .icon-moon { display: none; }
 
   :global([data-theme="light"]) .theme-toggle .icon-sun  { display: none; }
   :global([data-theme="light"]) .theme-toggle .icon-moon { display: block; }
 
-  @media (prefers-color-scheme: light) {
-    :global(:root:not([data-theme="dark"])) .theme-toggle .icon-sun  { display: none; }
-    :global(:root:not([data-theme="dark"])) .theme-toggle .icon-moon { display: block; }
-  }
-
+  /* Hide section links on mobile — only logo and theme toggle remain */
   @media (max-width: 768px) {
     .nav-links {
       display: none;

@@ -25,6 +25,11 @@ const dateStr = date.toISOString().split('T')[0];
 </Base>
 
 <style>
+  /*
+   * Post layout — wraps individual blog post pages.
+   * Top padding accounts for the fixed nav bar height.
+   */
+
   .post-container {
     padding-top: 160px;
     padding-bottom: 120px;
@@ -35,6 +40,7 @@ const dateStr = date.toISOString().split('T')[0];
     margin-bottom: 60px;
   }
 
+  /* Title scales fluidly: 1.4rem on small screens → 2.2rem on large */
   .post-title {
     font-size: clamp(1.4rem, 3vw, 2.2rem);
     font-weight: 700;
@@ -50,11 +56,18 @@ const dateStr = date.toISOString().split('T')[0];
     letter-spacing: 0.05em;
   }
 
+  /* Constrain prose width for comfortable reading line length */
   .post-content {
     max-width: 720px;
   }
 
-  /* Prose styles target slot/markdown content — use :global() */
+  /*
+   * Prose styles for markdown-rendered blog content.
+   * Astro compiles markdown into HTML and injects it via <slot />, so these
+   * elements live outside this component's scope. :global() tells Astro's
+   * CSS scoping to leave these selectors un-hashed so they can reach the
+   * generated HTML.
+   */
   .post-content :global(p) {
     color: var(--color-text-secondary);
     margin-bottom: 25px;
@@ -62,6 +75,7 @@ const dateStr = date.toISOString().split('T')[0];
     line-height: 1.85;
   }
 
+  /* h2 headings get a green left border, matching the terminal prompt motif */
   .post-content :global(h2) {
     font-size: 1.1rem;
     font-weight: 600;
@@ -89,6 +103,7 @@ const dateStr = date.toISOString().split('T')[0];
     text-underline-offset: 3px;
   }
 
+  /* Inline code: green text on a slightly raised background */
   .post-content :global(code) {
     font-family: var(--font-mono);
     font-size: 0.875rem;
@@ -98,6 +113,7 @@ const dateStr = date.toISOString().split('T')[0];
     border: 1px solid var(--color-border);
   }
 
+  /* Code blocks: green left border accent, horizontally scrollable */
   .post-content :global(pre) {
     background: var(--color-bg-secondary);
     border: 1px solid var(--color-border);
@@ -107,6 +123,7 @@ const dateStr = date.toISOString().split('T')[0];
     margin: 30px 0;
   }
 
+  /* Reset inline-code styles when code is inside a code block */
   .post-content :global(pre code) {
     background: none;
     border: none;
@@ -115,6 +132,7 @@ const dateStr = date.toISOString().split('T')[0];
     font-size: 0.9rem;
   }
 
+  /* Blockquotes: blue left border (accent) to distinguish from code blocks */
   .post-content :global(blockquote) {
     border-left: 2px solid var(--color-accent);
     padding: 15px 25px;
@@ -136,6 +154,7 @@ const dateStr = date.toISOString().split('T')[0];
     margin-bottom: 8px;
   }
 
+  /* "← back to blog" link uses the same green-to-blue hover pattern */
   .back-link {
     display: inline-block;
     margin-top: 60px;

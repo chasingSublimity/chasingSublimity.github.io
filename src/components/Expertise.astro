@@ -95,6 +95,17 @@
 </div>
 
 <style>
+  /*
+   * Expertise — responsive card grid of skill areas.
+   *
+   * The grid uses a 1px gap with the grid container's background set to
+   * the border color — this creates thin divider lines between cards
+   * without needing explicit borders on each card.
+   *
+   * Cards auto-wrap: 2-3 per row on desktop, single column on mobile.
+   * Same scroll-reveal and hover patterns as Experience cards.
+   */
+
   .expertise-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
@@ -103,6 +114,7 @@
     border: 1px solid var(--color-border);
   }
 
+  /* Each card starts hidden for scroll-reveal (see Experience for details) */
   .expertise-card {
     padding: 45px;
     background: var(--color-bg-secondary);
@@ -149,6 +161,7 @@
     line-height: 1.85;
   }
 
+  /* Collapse to single column on mobile */
   @media (max-width: 768px) {
     .expertise-grid {
       grid-template-columns: 1fr;
