@@ -110,11 +110,27 @@
 </div>
 
 <style>
+  /*
+   * Experience — vertical timeline of job positions.
+   *
+   * Layout: a thin vertical line (::before pseudo-element) runs down the
+   * left edge. Each job is a card positioned to the right of the line,
+   * with a small square marker sitting on the line.
+   *
+   * Scroll animation: items start invisible and shifted down (opacity: 0,
+   * translateY). script.js uses IntersectionObserver to add a "visible"
+   * class as each card scrolls into view, triggering a fade-and-slide-up.
+   *
+   * Hover: cards get an inset blue left border (box-shadow trick) and a
+   * slightly lighter background, giving the "selected line" feel.
+   */
+
   .timeline {
     position: relative;
     padding-left: 35px;
   }
 
+  /* Vertical line running the height of the timeline */
   .timeline::before {
     content: '';
     position: absolute;
@@ -125,6 +141,7 @@
     background: var(--color-border);
   }
 
+  /* Each job entry — starts hidden for the scroll-reveal animation */
   .timeline-item {
     position: relative;
     padding-bottom: 50px;
@@ -137,11 +154,13 @@
     padding-bottom: 0;
   }
 
+  /* Revealed by IntersectionObserver in script.js */
   .timeline-item.visible {
     opacity: 1;
     transform: translateY(0);
   }
 
+  /* Small green square sitting on the vertical line */
   .timeline-marker {
     position: absolute;
     left: -40px;
@@ -152,6 +171,7 @@
     border-radius: 0;
   }
 
+  /* Job card */
   .timeline-content {
     background: var(--color-bg-secondary);
     padding: 35px 40px;
@@ -159,11 +179,13 @@
     transition: box-shadow 0.2s ease, background 0.2s ease;
   }
 
+  /* Hover: inset blue left accent bar (via box-shadow, avoids layout shift) */
   .timeline-content:hover {
     box-shadow: inset 3px 0 0 var(--color-accent);
     background: var(--color-bg-tertiary);
   }
 
+  /* Title and company name sit on the same line, wrapping if needed */
   .timeline-header {
     display: flex;
     flex-wrap: wrap;
@@ -199,6 +221,7 @@
     line-height: 1.85;
   }
 
+  /* Row of technology badges at the bottom of each card */
   .tech-tags {
     display: flex;
     flex-wrap: wrap;

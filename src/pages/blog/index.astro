@@ -31,6 +31,14 @@ const posts = (await getCollection('blog')).sort(
 </Base>
 
 <style>
+  /*
+   * Blog index — list of posts, each shown as a clickable row.
+   * Two-column grid per row: date on the left, title + description on the right.
+   * Green left border (prompt color) shifts to blue on hover, matching
+   * the section-title hover pattern from global.css.
+   * Collapses to a single stacked column on mobile.
+   */
+
   .blog-section {
     background: var(--color-bg);
   }
@@ -41,6 +49,7 @@ const posts = (await getCollection('blog')).sort(
     gap: 2px;
   }
 
+  /* Each post row: date | title + description */
   .blog-post-row {
     display: grid;
     grid-template-columns: 140px 1fr;
@@ -54,6 +63,7 @@ const posts = (await getCollection('blog')).sort(
     transition: border-color 0.15s ease, background-color 0.15s ease;
   }
 
+  /* Hover: green left border → blue, background darkens */
   .blog-post-row:hover {
     border-color: var(--color-border);
     border-left-color: var(--color-accent);
@@ -85,6 +95,7 @@ const posts = (await getCollection('blog')).sort(
     font-size: 0.9rem;
   }
 
+  /* Stack date above title on mobile */
   @media (max-width: 768px) {
     .blog-post-row {
       grid-template-columns: 1fr;
