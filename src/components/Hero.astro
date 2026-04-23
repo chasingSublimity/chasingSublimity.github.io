@@ -49,6 +49,15 @@
 </header>
 
 <style>
+  /*
+   * Hero — full-viewport intro section.
+   * Two-column layout: left column has name/title/CTAs, right column shows
+   * a decorative code block with a typing animation (see script.js).
+   * The code block is hidden on smaller screens (<900px).
+   * Both columns fade in on load via the fadeInUp keyframe (global.css).
+   */
+
+  /* Fill the viewport, vertically center content, side-by-side columns */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -60,12 +69,14 @@
     margin: 0 auto;
   }
 
+  /* Left column: intro text and CTA buttons */
   .hero-content {
     flex: 1;
     max-width: 750px;
     animation: fadeInUp 0.6s ease-out forwards;
   }
 
+  /* "$ whoami" greeting styled like a terminal prompt */
   .hero-greeting {
     font-size: 1rem;
     color: var(--color-prompt);
@@ -81,6 +92,7 @@
     color: var(--color-prompt);
   }
 
+  /* Name scales fluidly: 2.6rem on small screens → 4rem on large */
   .hero-name {
     font-size: clamp(2.6rem, 5.5vw, 4rem);
     font-weight: 700;
@@ -110,6 +122,7 @@
     transition: var(--transition);
   }
 
+  /* Color-code the two project links: blue for Trello, green for local.tech */
   .hero-subtitle a[href*="trello"] {
     color: var(--color-accent);
   }
@@ -123,13 +136,18 @@
     text-underline-offset: 3px;
   }
 
+  /* CTA buttons sit side-by-side, wrapping on narrow screens */
   .hero-cta {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
   }
 
-  /* Code Block Visual */
+  /*
+   * Right column: decorative code block that mimics a terminal window.
+   * Hidden on mobile (display: none) to keep the hero focused on text.
+   * Fades in slightly after the left column (0.15s delay).
+   */
   .hero-visual {
     flex: 1;
     max-width: 575px;
@@ -143,6 +161,7 @@
     }
   }
 
+  /* Terminal window container with a heavy drop shadow for depth */
   .code-block {
     background: var(--color-bg-secondary);
     border-radius: 0;
@@ -152,6 +171,7 @@
                 inset 0 1px 0 rgba(255,255,255,0.03);
   }
 
+  /* Title bar row: "$ ./blake --help" */
   .code-header {
     display: flex;
     gap: 8px;
@@ -187,10 +207,14 @@
     color: var(--color-text-secondary);
   }
 
+  /* Syntax highlight colors for the typed-out code content.
+   * :global() is needed because these spans are injected by script.js
+   * at runtime, outside Astro's scoped-style reach. */
   .code-block :global(.keyword)  { color: var(--color-syntax-keyword); }
   .code-block :global(.function) { color: var(--color-syntax-function); }
   .code-block :global(.string)   { color: var(--color-syntax-string); }
 
+  /* Blinking cursor appended by the typing animation in script.js */
   .code-block :global(.code-cursor) {
     display: inline-block;
     width: 2px;
